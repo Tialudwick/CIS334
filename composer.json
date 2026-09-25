@@ -1,0 +1,14 @@
+{
+    "name": "student/cis334-app",
+    "description": "CIS 334 application",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.4"
+    },
+    "scripts": {
+        "hello": "echo Hello class 4",
+        "demo": "@php public/tutorials/4-1-namespaces.php"
+    }
+}
