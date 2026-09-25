@@ -7,8 +7,14 @@
     "require": {
         "php": "^8.4"
     },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
     "scripts": {
         "hello": "echo Hello class 4",
         "demo": "@php public/tutorials/4-1-namespaces.php"
     }
 }
+
