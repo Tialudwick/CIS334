@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Exercises\Class4\Library;
 
-class Book extends Item
+class VideoGame extends Item
 {
     public function __construct(string $title)
     {
@@ -15,6 +15,6 @@ class Book extends Item
     {
         $dueDate = $this->getDateDue()?->format('Y-m-d');
         $dueStr = $dueDate ? " (Due: {$dueDate})" : "";
-        return "Library: {$this->getTitle()}{$dueStr}";
+        return "Library Game: {$this->getTitle()}{$dueStr}";
     }
 }
