@@ -10,25 +10,37 @@ class Application
  private Environment $twig;
  public function __construct()
  {
-    $loader = new FilesystemLoader(self::PATH_TO_TEMPLATES);
+ $loader = new FilesystemLoader(self::PATH_TO_TEMPLATES);
  $this->twig = new Environment($loader, [
  'autoescape' => 'html',
  'strict_variables' => true,
  ]);
  }
-public function run(): void
-{
-    $products = [
-    new Product('Club notebook', 4.50),
-    new Product('Club mug', 8.00),
-];
-$template = 'demo.html.twig';
-$args = [
- 'name' => 'Avery',
- 'meeting' => ['day' => 'Wednesday', 'room' => 'Library 204'],
- 'product' => $products[0],
- 'products' => $products,
- ];
+ public function run(): void
+ {
+ $action = $_GET['action'] ?? 'home';
+ if (!is_string($action)) {
+ $action = 'home';
+ }
+ switch ($action) {
+ case 'contact':
+ $this->contact();
+ break;
+ case 'home':
+ default:
+ $this->home();
+ }
+ }
+ private function home(): void
+ {
+ $template = 'home.html.twig';
+ $args = ['pageTitle' => 'Home'];
  echo $this->twig->render($template, $args);
-}
+ }
+ private function contact(): void
+ {
+ $template = 'contact.html.twig';
+ $args = ['pageTitle' => 'Contact'];
+ echo $this->twig->render($template, $args);
+ }
 }
