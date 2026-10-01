@@ -34,13 +34,13 @@ class Application
  private function home(): void
  {
  $template = 'home.html.twig';
- $args = ['pageTitle' => 'Home'];
+ $args = [];
  echo $this->twig->render($template, $args);
  }
  private function contact(): void
  {
  $template = 'contact.html.twig';
- $args = ['pageTitle' => 'Contact'];
+ $args = [];
  echo $this->twig->render($template, $args);
  }
 }

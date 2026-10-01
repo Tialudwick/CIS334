@@ -3,7 +3,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../../src/Tutorials/Class3/Vehicle.php';
 require_once __DIR__ . '/../../src/Tutorials/Class3/Car.php';
 require_once __DIR__ . '/../../src/Tutorials/Class3/Boat.php';
-$car = new Car(1,);
+$car = new Car();
 $car->makeModel = 'City Compact';
 $boat = new Boat();
 $boat->makeModel = 'Harbor Cruiser';

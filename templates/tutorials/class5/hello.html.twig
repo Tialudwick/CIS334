@@ -1,4 +1,8 @@
-{{ include('_header.html.twig') }}
- <p>Explore a new skill with classmates each week.</p>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block pageTitle %}Home{% endblock %}
+{% block homeLink %}active{% endblock %}
+
+{% block main %}
+    <p>Welcome to the home page.</p>
+{% endblock %}
