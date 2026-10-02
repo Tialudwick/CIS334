@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block pageTitle %}Campus Discovery{% endblock %}</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+        header { border-bottom: 2px solid #ddd; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .post { border: 1px solid #e0e0e0; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; background: #fafafa; }
+        .post h3 { margin-top: 0; margin-bottom: 0.5rem; }
+        .post img { max-width: 100%; height: auto; border-radius: 4px; margin-top: 1rem; display: block; }
+        .meta { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+        footer { margin-top: 3rem; border-top: 1px solid #ddd; padding-top: 1rem; text-align: center; font-size: 0.9rem; color: #777; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ block('pageTitle') }}</h1>
+        <nav>
+            <a href="index.php">Home Feed</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ "now"|date("Y") }} Campus Discovery Project</p>
+    </footer>
+</body>
+</html>

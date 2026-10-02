@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block pageTitle %} Campus Help Desk{%endbloack %}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ block('pageTitle) }}</h1>
+        <nav>
+            <a href="index.php?action=home">Home</a> |
+            <a href="index.php?action=staff">Staff</a>
+        </nav>
+        <form method="post" action="index.php?action=name" style="margin-top: 15px;">
+            <label for="name">Your name:</label>
+            <input type="text" id="name" name="name" value="{{ name }}">
+            <button type="submit">Update</button>
+        </form>
+    </header>
+
+    <hr>
+
+    <main>
+    {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>Current Year: {{ "now"|date("Y") }} | Active User: {{ name|upper }}</p>
+        <p>Session Ref: {{ random(1000, 9999) }}</p>
+    </footer>
+<body>
+<html>

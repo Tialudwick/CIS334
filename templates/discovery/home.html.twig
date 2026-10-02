@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block pageTitle %}{{ pageTitle }}{% endblock %}
+
+{% block main %}
+    <h2>Latest Activity</h2>
+    {% for post in posts %}
+        {{ include('_' ~ post.type ~ '.html.twig', { post: post }) }}
+    {% else %}
+        <p>No posts available at this time.</p>
+    {% endfor %}
+{% endblock %}

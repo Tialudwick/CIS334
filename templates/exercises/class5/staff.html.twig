@@ -1,0 +1,23 @@
+{%extends 'base.html.twig' %}
+
+{% block pageTitle %}Help Desk Staff{% endblock %}
+
+{% block main %}
+    <h2>Staff Directory</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Job Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in staffList %}
+            <tr>
+                <td>{{ person.name }}</td>
+                <tf>{{ person.jobTitle }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

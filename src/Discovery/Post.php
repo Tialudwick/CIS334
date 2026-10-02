@@ -6,41 +6,34 @@ namespace App\Discovery;
 
 class Post
 {
-    public function __construct(
-        private Member $author,
-        private string $createdAt,
-        private string $body
-    ) {}
+    private string $title;
+    private string $content;
+    private string $author;
 
-    public function getAuthor(): Member
+    public function __construct(string $title, string $content, string $author)
+    {
+        $this->title = $title;
+        $this->content = $content;
+        $this->author = $author;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    public function getAuthor(): string
     {
         return $this->author;
     }
 
-    public function getCreatedAt(): string
+    public function getType(): string
     {
-        return $this->createdAt;
-    }
-
-    public function getBody(): string
-    {
-        return $this->body;
-    }
-
-    public function render(): string
-    {
-        $authorDisplay = htmlspecialchars($this->author->getDisplayName(), ENT_QUOTES, 'UTF-8');
-        $date = htmlspecialchars($this->createdAt, ENT_QUOTES, 'UTF-8');
-        $content = nl2br(htmlspecialchars($this->body, ENT_QUOTES, 'UTF-8'));
-
-        return <<<HTML
-        <article class="card mb-4 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title mb-1">{$authorDisplay}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{$date}</h6>
-                <p class="card-text">{$content}</p>
-            </div>
-        </article>
-        HTML;
+        return 'post';
     }
 }

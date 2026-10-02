@@ -58,4 +58,32 @@ public function run(): void
 }
 
 public function home(): void 
-{}
+{
+    echo $this->twig->render('home.html.twig');
+}
+
+public function staff(): void
+{
+    $staffMembers = [
+        new Staff('Avery', 'Tutor'),
+        new Staff('Morgan', 'Lab Assistant'),
+        new Staff('Riley', 'Coordinator'),
+    ];
+
+    echo $this->twig->render('staff.html.twig', [
+        'staffMembers' => $staffMembers,
+        ]);
+}
+
+public function name(): void
+{
+    if (isset($_POST['name']) && is_string($_POST['name'])) {
+            $submittedName = trim($_POST['name']);
+            if ($submittedName !== '') {
+                $_SESSION['name'] = $submittedName;
+    } 
+    }
+     header('Location: index.php');
+     exit;
+}
+}
