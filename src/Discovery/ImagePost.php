@@ -14,14 +14,13 @@ class ImagePost extends Post
         $this->imageURL = $imageURL;
     }
 
-    public function getType(): string
-    {
-        return 'image_post';
-    }
-
-    
     public function getImageUrl(): string
     {
         return $this->imageURL;
+    }
+
+    public function getType(): string
+    {
+        return 'image_post';
     }
 }

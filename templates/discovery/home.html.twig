@@ -3,6 +3,12 @@
 {% block pageTitle %}{{ pageTitle }}{% endblock %}
 
 {% block main %}
+    <div class="filter-buttons">
+        <a href="index.php?action=feed" class="{% if currentFilter == 'all' %}btn-active{% endif %}">All Posts</a>
+        <a href="index.php?action=text" class="{% if currentFilter == 'text' %}btn-active{% endif %}">Text Only</a>
+        <a href="index.php?action=image" class="{% if currentFilter == 'image' %}btn-active{% endif %}">Image Posts</a>
+    </div>
+
     <h2>Latest Activity</h2>
     {% for post in posts %}
         {{ include('_' ~ post.type ~ '.html.twig', { post: post }) }}
