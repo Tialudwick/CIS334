@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block pageTitle %}Activity Feed{% endblock %}
+{% block active_feed %}nav-active{% endblock %}
+
+{% block main %}
+    <div class="filter-buttons">
+        <a href="index.php?action=feed" class="{% if currentFilter == 'all' %}btn-active{% endif %}">All Posts</a>
+        <a href="index.php?action=feed_text" class="{% if currentFilter == 'text' %}btn-active{% endif %}">Text Only</a>
+        <a href="index.php?action=feed_image" class="{% if currentFilter == 'image' %}btn-active{% endif %}">Image Posts</a>
+    </div>
+
+    {% for post in posts %}
+        <div class="card">
+            <h3>{{ post.author }} <small style="font-size: 0.8rem; font-weight: normal; color: #666;">• {{ post.timestamp }}</small></h3>
+            <p>{{ post.content }}</p>
+
+            {% if post.imageUrl is defined %}
+                <div>
+                    <img src="{{ post.imageUrl }}" alt="{{ post.caption }}">
+                    <p><em>{{ post.caption }}</em></p>
+                </div>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No posts available for this filter view.</p>
+    {% endfor %}
+{% endblock %}

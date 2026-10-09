@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block pageTitle %}Home{% endblock %}
+{% block active_home %}nav-active{% endblock %}
+
+{% block main %}
+    <p>Welcome to my application. This architecture enforces separation between routing (`Application`), display controllers (`DefaultController`, `FeedController`), and downloadable media controllers (`VCFController`).</p>
+    <p>Use the links above to view data-driven collections, download personal contact cards, or filter the live activity feed.</p>
+{% endblock %}

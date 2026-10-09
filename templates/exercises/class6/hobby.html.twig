@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block pageTitle %}Hobby: Architecture & Design Collection{% endblock %}
+{% block active_hobby %}nav-active{% endblock %}
+
+{% block main %}
+    <p>A data-driven collection of favorite software design literature:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Published</th>
+                <th>Pages</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td><strong>{{ book.title }}</strong></td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.yearPublished }}</td>
+                    <td>{{ book.pages }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">No books found in the collection.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

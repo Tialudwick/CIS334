@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:{{ lastname }};{{ firstname }};;;
+FN:{{ firstname }} {{ lastname }}
+ORG:{{ company }}
+TITLE:{{ job_title }}
+EMAIL;TYPE=PREF,INTERNET:{{ email }}
+TEL;TYPE=CELL,VOICE:{{ phone }}
+URL:{{ website }}
+REV:{{ "now"|date("Ymd\\THis\\Z") }}
+END:VCARD
