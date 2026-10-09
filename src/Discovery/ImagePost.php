@@ -7,14 +7,21 @@ namespace App\Discovery;
 class ImagePost extends Post
 {
     private string $imageURL;
+
     public function __construct(string $title, string $content, string $author, string $imageURL)
     {
-        parent:: __construct($title, $content,$author);
+        parent::__construct($title, $content, $author);
         $this->imageURL = $imageURL;
     }
+
     public function getType(): string
     {
-        return 'ImagePost';
+        return 'image_post';
+    }
+
+    
+    public function getImageUrl(): string
+    {
+        return $this->imageURL;
     }
 }
-    
