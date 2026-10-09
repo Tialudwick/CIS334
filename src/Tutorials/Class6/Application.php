@@ -12,6 +12,18 @@ class Application
  $action = 'home';
  }
  switch ($action) {
+ case 'product':
+ $rawId = $_GET['id'] ?? null;
+ $id = is_string($rawId)
+ ? filter_var($rawId, FILTER_VALIDATE_INT, ['options' =>
+['min_range' => 1]])
+ : false;
+ if ($id === false) {
+ $productController->productNotFound();
+ break;
+ }
+ $productController->showProduct($id);
+ break;
  case 'products':
  $productController->productList();
  break;

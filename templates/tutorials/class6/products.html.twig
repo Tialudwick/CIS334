@@ -2,14 +2,15 @@
 {% block pageTitle %}Products{% endblock %}
 {% block productsLink %}active{% endblock %}
 {% block main %}
-    <p>Supplies for your study space.</p>
-    <dl>
-        {% for product in products %}
-            <dt>{{ product.name }}</dt>
-            <dd>${{ product.price|number_format(2) }}</dd>
-        {% else %}
-            <dt>Availability</dt>
-            <dd>No products available.</dd>
-        {% endfor %}
-    </dl>
+ <p>Supplies for your study space. Select a product to view its page.</p>
+ <dl>
+ {% for id, product in products %}
+ <dt><a href="index.php?action=product&amp;id={{ id }}">{{ product.name
+}}</a></dt>
+ <dd>${{ product.price|number_format(2) }}</dd>
+ {% else %}
+ <dt>Availability</dt>
+ <dd>No products available.</dd>
+ {% endfor %}
+ </dl>
 {% endblock %}
