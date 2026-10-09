@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus Supply: {% block pageTitle %}{% endblock %}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>Campus Supply</p>
+        <nav aria-label="Main navigation">
+            <a class="{% block homeLink %}{% endblock %}" href="index.php?
+action=home">Home</a>
+            <a class="{% block contactLink %}{% endblock %}" href="index.php?
+action=contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>{{ block('pageTitle') }}</h1>
+        {% block main %}{% endblock %}
+    </main>
+ </body>
+ </html>
