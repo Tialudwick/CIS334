@@ -7,14 +7,13 @@ class VCFController extends Controller
 {
     public function download(): void
     {
-       public function download(): void
-    {
+       
         $vcardContent = $this->twig->render('vcard.vcf.twig', [
             'firstname' => 'Jane',
             'lastname' => 'Doe',
             'company' => 'Acme Corp.',
             'job-title' => 'Lead Developer',
-            'email' => 'jane.doe@example.com'
+            'email' => 'jane.doe@example.com',
             'phone' => '+1-555-123-4567',
             'website' => 'https://example.com'
         ]);
