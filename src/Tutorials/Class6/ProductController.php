@@ -20,7 +20,7 @@ class ProductController
         ]);
     }
 
-    public function productionList(): void
+    public function productList(): void
     {
         $products = [
             new Product('Study notebook', 4.50),
