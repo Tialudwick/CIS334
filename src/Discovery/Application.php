@@ -26,7 +26,7 @@ class Application
     {
         $posts = $this->getPosts();
 
-        echo $this->twig->render('index.html.twig', [
+        echo $this->twig->render('home.html.twig', [
             'pageTitle' => 'Campus Discovery Feed',
             'posts' => $posts,
         ]);
