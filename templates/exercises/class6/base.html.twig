@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block pageTitle %}My Website{% endblock %}</title>
+    <style>
+        body { font-family: -apple-sytem, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6rem; margin: 2rem auto; max-width: 800px; padding: 0 1rem; color:#333;}
+        nav { background: #f4f4f6; padding: 1rem; border-radius: 8px; margine-bottom: 1.5 rem; display: flex; gap: 1rem; flex-wrap: wrap;}
+        nav a { text-decoration: none; color: #555; }
+        .nav-active{ font-weight: bold; color: #0056b3; text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #e2e8f0; padding: 10px; text-align: left; }
+        .card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .card img { max-width: 100%; height: auto; border-radius: 6px; margin-top: 0.5rem; }
+        .filter-buttons { margin-bottom: 1.5rem; display: flex; gap: 0.5rem; }
+        .filter-buttons a { padding: 0.5rem 1rem; background: #e2e8f0; border-radius: 6px; text-decoration: none; color: #333; font-size: 0.9rem; }
+        .filter-buttons a.btn-active { background: #0056b3; color: #ffffff; font-weight: bold; }
+
+    </style>
+</head>
+<body>
+    <nav>
+    <a href="index.php?action=home" class="{% block active_home %}{% endblock %}">Home</a>
+        <a href="index.php?action=about" class="{% block active_about %}{% endblock %}">About</a>
+        <a href="index.php?action=hobby" class="{% block active_hobby %}{% endblock %}">Hobby Reading</a>
+        <a href="index.php?action=feed" class="{% block active_feed %}{% endblock %}">Activity Feed</a>
+        <a href="index.php?action=vcf">Download vCard</a>
+    </nav>
+
+    <main>
+        <h1>{{ block('pageTitle) }}</h1>
+        {% block main %}{% endbloack %}
+    </main>
+</body>
+</html>
